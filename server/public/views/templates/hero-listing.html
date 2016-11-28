@@ -1,0 +1,20 @@
+<div class="heroList">
+  <h3>Hero List</h3>
+  <table style="width:60%" id="heroListTable">
+    <thead>
+      <tr>
+        <th>Persona</th>
+        <th>Alias</th>
+        <th>Superpower</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="heroData in heroListing.heroes track by $index">
+        <td>{{heroData.persona}}</td>
+        <td>{{heroData.alias}}</td>
+        <td>(Power ID: {{heroData.power_id}}) {{heroData.name}}: {{heroData.description}}</td>
+        <td><input type="button" ng-model="heroListing.delete" ng-click="heroListing.delete($index)" value="DELETE"/></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -3,8 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Department of Emerging Superhero Knowledge</title>
+    <script type="text/javascript" src="../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../vendor/angular-route.min.js"></script>
+    <script type="text/javascript" src="../scripts/client.js"></script>
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/main.css">
   </head>
-  <body>
-    <h1>Department of Emerging Superhero Knowledge</h1>
+  <body ng-app="myApp">
+
+    <section>
+      <div ng-include="'/views/templates/header.html'"></div>
+      <div ng-include="'/views/templates/nav.html'"></div>
+      <main ng-view></main>
+    </section>
   </body>
 </html>

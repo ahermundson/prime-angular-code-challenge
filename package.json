@@ -1,7 +1,7 @@
 {
   "name": "angular-routing",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fork, clone, and run `npm install` to get started.",
   "main": "index.js",
   "scripts": {
     "test": "nodemon server/app.js",
@@ -10,11 +10,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-route": "^1.5.8",
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
     "pg": "^6.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahermundson/prime-angular-code-challenge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahermundson/prime-angular-code-challenge/issues"
+  },
+  "homepage": "https://github.com/ahermundson/prime-angular-code-challenge#readme"
 }
