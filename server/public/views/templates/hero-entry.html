@@ -1,14 +1,14 @@
 <div class="hero-form">
-  <form ng-attr-id="employeeinfo">
+  <form ng-attr-id="heroinfo">
     <label for="persona">Persona:</label>
     <input type="text" id="persona" name="persona" ng-model="heroEntry.newHero.persona" required/>
 
     <label for="alias">Alias:</label>
     <input type="text" id="alias" name="alias" ng-model="heroEntry.newHero.alias" required/>
 
-    <label for="superpower-dropdown">Superpower</label>
+    <label for="superpower-dropdown">Superpower: </label>
     <select ng-model="heroEntry.newHero.power_id" name="superpower-dropdown">
-      <option ng-repeat="superpower in heroEntry.superpowers track by $index">{{superpower.id}} {{superpower.name}}</option>
+      <option ng-repeat="superpower in heroEntry.superpowers">{{superpower.id}} {{superpower.name}}</option>
 
     </select>
 
