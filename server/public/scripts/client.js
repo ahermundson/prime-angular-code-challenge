@@ -33,13 +33,12 @@ app.controller('HeroEntryController', ["$http", function($http) {
   }
 
   self.postHero = function(index) {
-    console.log("new hero: ", self.newHero.power_id);
+    //slicing description off of Superpower to only post ID
     if (self.newHero.power_id !== "10 Fire Control") {
       self.newHero.power_id = self.newHero.power_id.slice(0,1);
     } else {
       self.newHero.power_id = self.newHero.power_id.slice(0,2);
     }
-    console.log(self.newHero.power_id);
     $http.post('/heroes', self.newHero)
     .then(function (response){
       console.log('POST finished.');
@@ -56,6 +55,7 @@ app.controller('HeroListingController', ["$http", function($http) {
   self.heroes = [];
   getHeroes();
   function getHeroes() {
+    console.log("running get heroes");
     $http.get('/heroes')
     .then(function (response){
       console.log(response.data);
@@ -68,6 +68,16 @@ app.controller('HeroListingController', ["$http", function($http) {
     $http.delete('/heroes/' + id)
       .then(function(response) {
         console.log('Delete finished. Hero deleted.');
+        getHeroes();
+      });
+  }
+
+  self.update = function(index) {
+    var id = self.heroes[index].id;
+    console.log(self.heroes[index]);
+    $http.put('/heroes/' + id, self.heroes[index])
+      .then(function(response) {
+        console.log('PUT finished. Hero updated.');
         getHeroes();
       });
   }

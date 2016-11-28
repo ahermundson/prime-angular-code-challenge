@@ -1,18 +1,21 @@
+<h3>Hero List</h3>
 <div class="heroList">
-  <h3>Hero List</h3>
   <table style="width:60%" id="heroListTable">
     <thead>
       <tr>
         <th>Persona</th>
         <th>Alias</th>
+        <th>Power ID</th>
         <th>Superpower</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="heroData in heroListing.heroes track by $index">
-        <td>{{heroData.persona}}</td>
-        <td>{{heroData.alias}}</td>
-        <td>(Power ID: {{heroData.power_id}}) {{heroData.name}}: {{heroData.description}}</td>
+        <td><input type="text" id="persona" name="persona" ng-model="heroData.persona" ng-value="{{heroData.persona}}"/></td>
+        <td><input type="text" id="alias" name="alias" ng-model="heroData.alias" ng-value="{{heroData.alias}}"/></td>
+        <td><input type="text" id="power_id" name="power_id" ng-model="heroData.power_id" ng-value="{{heroData.power_id}}"/></td>
+        <td>{{heroData.name}}: {{heroData.description}}</td>
+        <td><input type="button" ng-model="heroListing.update" ng-click="heroListing.update($index)" value="UPDATE"/></td>
         <td><input type="button" ng-model="heroListing.delete" ng-click="heroListing.delete($index)" value="DELETE"/></td>
       </tr>
     </tbody>
